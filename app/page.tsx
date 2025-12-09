@@ -8,12 +8,30 @@ import { ScrollProgress } from "@/components/animations/scroll-progress"
 import { StaggerIn } from "@/components/animations/stagger-in"
 import { AnimatedButton } from "@/components/ui/animated-button"
 import { HoverButton } from "@/components/ui/hover-button"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { motion } from "framer-motion"
 import { ArrowRight, CheckCircle, ChevronRight, Eye, Flame, Lightbulb, Search, Target, Thermometer } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 export default function Home() {
+  const router = useRouter()
+  const [searchType, setSearchType] = useState("keyword")
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const handleSearch = () => {
+    if (!searchQuery.trim()) return
+
+    const params = new URLSearchParams({
+      type: searchType,
+      q: searchQuery,
+    })
+    router.push(`/search?${params.toString()}`)
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollProgress />
@@ -62,30 +80,58 @@ export default function Home() {
                 全国のサウナ施設を簡単に検索できる革新的なサウナ検索サービス。あなたに最適なサウナを見つけます。
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Link href="/services" className="w-full sm:w-auto">
-                  <AnimatedButton
-                    size="lg"
-                    className="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 sm:px-8 w-full sm:w-auto"
-                    hoverEffect="lift"
-                    iconAnimation={true}
-                  >
-                    サービスを見る
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </AnimatedButton>
-                </Link>
-                <Link href="/projects" className="w-full sm:w-auto">
-                  <HoverButton
-                    size="lg"
-                    variant="outline"
-                    className="text-white border-white hover:bg-white/20 hover:text-white font-semibold px-6 sm:px-8 w-full sm:w-auto backdrop-blur-sm"
-                    hoverEffect="glow"
-                    rippleColor="rgba(255, 255, 255, 0.3)"
-                  >
-                    サウナを探す
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </HoverButton>
-                </Link>
+              {/* サウナ検索フォーム */}
+              <div className="max-w-4xl mx-auto rounded-2xl p-4 sm:p-6 shadow-2xl">
+                <Tabs value={searchType} onValueChange={setSearchType} className="w-full">
+                  <TabsList className="w-full bg-transparent h-auto p-0 mb-4 sm:mb-6 flex flex-wrap gap-0 border-b-0">
+                    <TabsTrigger
+                      value="keyword"
+                      className="flex-1 min-w-[120px] bg-white text-amber-900 font-semibold px-4 py-3 rounded-tl-lg rounded-tr-lg data-[state=active]:bg-white data-[state=active]:text-amber-900 data-[state=inactive]:bg-blue-600/50 data-[state=inactive]:text-white border-r border-blue-500/30 relative data-[state=active]:after:content-[''] data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-1/2 data-[state=active]:after:transform data-[state=active]:after:-translate-x-1/2 data-[state=active]:after:w-0 data-[state=active]:after:h-0 data-[state=active]:after:border-l-[8px] data-[state=active]:after:border-r-[8px] data-[state=active]:after:border-t-[8px] data-[state=active]:after:border-l-transparent data-[state=active]:after:border-r-transparent data-[state=active]:after:border-t-white"
+                    >
+                      キーワードから探す
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="prefecture"
+                      className="flex-1 min-w-[120px] bg-blue-600/50 text-white font-semibold px-4 py-3 rounded-none data-[state=active]:bg-white data-[state=active]:text-amber-900 data-[state=inactive]:bg-blue-600/50 data-[state=inactive]:text-white border-l border-r border-blue-500/30 relative data-[state=active]:after:content-[''] data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-1/2 data-[state=active]:after:transform data-[state=active]:after:-translate-x-1/2 data-[state=active]:after:w-0 data-[state=active]:after:h-0 data-[state=active]:after:border-l-[8px] data-[state=active]:after:border-r-[8px] data-[state=active]:after:border-t-[8px] data-[state=active]:after:border-l-transparent data-[state=active]:after:border-r-transparent data-[state=active]:after:border-t-white"
+                    >
+                      都道府県から探す
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="feature"
+                      className="flex-1 min-w-[120px] bg-blue-600/50 text-white font-semibold px-4 py-3 rounded-bl-lg rounded-br-lg data-[state=active]:bg-white data-[state=active]:text-amber-900 data-[state=inactive]:bg-blue-600/50 data-[state=inactive]:text-white border-l border-blue-500/30 relative data-[state=active]:after:content-[''] data-[state=active]:after:absolute data-[state=active]:after:bottom-[-1px] data-[state=active]:after:left-1/2 data-[state=active]:after:transform data-[state=active]:after:-translate-x-1/2 data-[state=active]:after:w-0 data-[state=active]:after:h-0 data-[state=active]:after:border-l-[8px] data-[state=active]:after:border-r-[8px] data-[state=active]:after:border-t-[8px] data-[state=active]:after:border-l-transparent data-[state=active]:after:border-r-transparent data-[state=active]:after:border-t-white"
+                    >
+                      特徴から探す
+                    </TabsTrigger>
+                  </TabsList>
+
+                  <div className="flex flex-col sm:flex-row gap-0 w-full">
+                    <Input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder={
+                        searchType === "keyword"
+                          ? "施設名・エリア・キーワード"
+                          : searchType === "prefecture"
+                          ? "都道府県を選択"
+                          : "特徴を選択"
+                      }
+                      className="w-full h-12 sm:h-14 rounded-l-lg rounded-r-none border-0 focus-visible:ring-2 focus-visible:ring-amber-400 text-base sm:text-lg px-4 sm:px-6"
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          handleSearch()
+                        }
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={handleSearch}
+                      className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 sm:px-8 h-12 sm:h-14 rounded-r-lg rounded-l-none transition-colors duration-200 flex items-center justify-center whitespace-nowrap"
+                    >
+                      検索
+                    </button>
+                  </div>
+                </Tabs>
               </div>
             </motion.div>
           </div>
