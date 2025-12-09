@@ -1,12 +1,12 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { AnimatedButton } from "@/components/ui/animated-button"
+import { Button } from "@/components/ui/button"
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronRight, Flame, X } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { HardHat, ChevronRight, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { AnimatedButton } from "@/components/ui/animated-button"
+import { useEffect, useRef } from "react"
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -88,7 +88,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.1 }}
                     className="bg-amber-500 text-white p-1 sm:p-1.5 rounded-md"
                   >
-                    <HardHat className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <Flame className="h-4 w-4 sm:h-5 sm:w-5" />
                   </motion.div>
                   <motion.div
                     initial={{ x: -10, opacity: 0 }}
@@ -96,8 +96,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 }}
                     className="flex flex-col"
                   >
-                    <span className="text-base sm:text-lg font-bold">BuildMaster</span>
-                    <span className="text-[10px] sm:text-xs text-muted-foreground">建設の卓越性</span>
+                    <span className="text-base sm:text-lg font-bold">Totono</span>
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">サウナ検索の卓越性</span>
                   </motion.div>
                 </Link>
                 <Button
@@ -143,25 +143,25 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   >
                     <MobileSubNavItem
                       href="/services/residential"
-                      label="住宅建設"
+                      label="岩盤浴"
                       isActive={pathname === "/services/residential"}
                       onClick={onClose}
                     />
                     <MobileSubNavItem
                       href="/services/commercial"
-                      label="商業開発"
+                      label="スチームサウナ"
                       isActive={pathname === "/services/commercial"}
                       onClick={onClose}
                     />
                     <MobileSubNavItem
                       href="/services/industrial"
-                      label="工業施設"
+                      label="フィンランド式サウナ"
                       isActive={pathname === "/services/industrial"}
                       onClick={onClose}
                     />
                     <MobileSubNavItem
                       href="/services/design"
-                      label="建築設計"
+                      label="その他サウナ"
                       isActive={pathname === "/services/design"}
                       onClick={onClose}
                     />
@@ -170,7 +170,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
                 <MobileNavItem
                   href="/projects"
-                  label="プロジェクト"
+                  label="サウナ施設"
                   isActive={pathname === "/projects"}
                   onClick={onClose}
                   delay={0.3}
@@ -216,7 +216,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       hoverEffect="shine"
                       iconAnimation={true}
                     >
-                      無料見積もりを取得
+                      サウナを検索
                       <ChevronRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
                     </AnimatedButton>
                   </motion.div>

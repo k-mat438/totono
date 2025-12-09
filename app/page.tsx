@@ -9,7 +9,7 @@ import { StaggerIn } from "@/components/animations/stagger-in"
 import { AnimatedButton } from "@/components/ui/animated-button"
 import { HoverButton } from "@/components/ui/hover-button"
 import { motion } from "framer-motion"
-import { ArrowRight, CheckCircle, ChevronRight, Compass, Eye, Hammer, HardHat, Lightbulb, Target } from "lucide-react"
+import { ArrowRight, CheckCircle, ChevronRight, Eye, Flame, Lightbulb, Search, Target, Thermometer } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -23,8 +23,8 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-1.png"
-            alt="Construction site background"
+            src="/images/sauna-1.jpeg"
+            alt="Sauna search service background"
             fill
             priority
             className="object-cover"
@@ -51,15 +51,15 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-block px-4 py-2 bg-amber-500/90 text-white rounded-full text-sm font-medium mb-4"
               >
-                最高品質の建設サービス
+                最高品質のサウナ検索サービス
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-md">
-                明日の<span className="text-amber-400">基盤</span>を今日築く
+                理想の<span className="text-amber-400">サウナ</span>を見つける
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-xl md:max-w-2xl mx-auto drop-shadow-md">
-                住宅、商業、工業プロジェクトに対応する革新的な建設ソリューション。最高品質と精密さを提供します。
+                全国のサウナ施設を簡単に検索できる革新的なサウナ検索サービス。あなたに最適なサウナを見つけます。
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -82,7 +82,7 @@ export default function Home() {
                     hoverEffect="glow"
                     rippleColor="rgba(255, 255, 255, 0.3)"
                   >
-                    プロジェクトを見る
+                    サウナを探す
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </HoverButton>
                 </Link>
@@ -105,7 +105,7 @@ export default function Home() {
                 ミッションとビジョン
               </h2>
               <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
-                私たちの基本原則に基づき、建設業界を変革し、お客様に永続的な価値を創造することを目指しています。
+                私たちの基本原則に基づき、サウナ業界を変革し、ユーザーに永続的な価値を創造することを目指しています。
               </p>
             </div>
           </FadeIn>
@@ -124,25 +124,25 @@ export default function Home() {
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">私たちのミッション</h3>
                 </div>
                 <p className="text-gray-700 dark:text-gray-300 mb-4 md:mb-6 text-sm sm:text-base text-center sm:text-left">
-                  革新性、誠実さ、職人技を通じて、お客様の期待を超える卓越した建設サービスを提供します。私たちは以下に取り組んでいます：
+                  革新性、誠実さ、専門性を通じて、ユーザーの期待を超える卓越したサウナ検索サービスを提供します。私たちは以下に取り組んでいます：
                 </p>
                 <StaggerIn direction="up" staggerDelay={0.1}>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-amber-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base text-left">
-                      利用者の生活の質を向上させる、安全で持続可能な機能的な空間の創造
+                      ユーザーのサウナ体験を向上させる、正確で信頼性の高い検索機能の提供
                     </p>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-amber-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base text-left">
-                      チームメンバー間での卓越性、継続的改善、専門的成長の文化の育成
+                      サービス品質の向上、継続的改善、ユーザーフィードバックに基づく機能強化の文化の育成
                     </p>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-amber-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base text-left">
-                      透明なコミュニケーションと倫理的な実践を通じて、お客様、パートナー、コミュニティとの永続的な関係の構築
+                      透明な情報提供と倫理的な実践を通じて、ユーザー、サウナ施設、コミュニティとの永続的な関係の構築
                     </p>
                   </div>
                 </StaggerIn>
@@ -162,19 +162,19 @@ export default function Home() {
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">私たちのビジョン</h3>
                 </div>
                 <p className="text-gray-700 dark:text-gray-300 mb-4 md:mb-6 text-sm sm:text-base text-center sm:text-left">
-                  最も信頼され、革新的な建設会社として、以下で認められることを目指します：
+                  最も信頼され、革新的なサウナ検索サービスとして、以下で認められることを目指します：
                 </p>
                 <StaggerIn direction="up" staggerDelay={0.1}>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-amber-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base text-left">
-                      建設品質、安全性、お客様満足度において卓越性の新基準を設定すること
+                      検索精度、情報の正確性、ユーザー満足度において卓越性の新基準を設定すること
                     </p>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-amber-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base text-left">
-                      環境への影響を最小限に抑えながら、効率性と耐久性を最大化する持続可能な建設手法の開拓
+                      ユーザビリティとパフォーマンスを最大化しながら、持続可能で拡張性の高いサービス基盤の構築
                     </p>
                   </div>
                   <div className="flex items-start">
@@ -202,7 +202,7 @@ export default function Home() {
                   私たちのアプローチ
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base md:text-lg mb-5 md:mb-6">
-                  成功する建設は、協力、革新、細部への注意という基盤の上に築かれると信じています。伝統的な職人技と最先端技術を組み合わせることで、時代に耐えるプロジェクトを実現します。
+                  成功するサウナ検索サービスは、協力、革新、細部への注意という基盤の上に築かれると信じています。ユーザーのニーズを深く理解し、最先端技術を組み合わせることで、時代に耐えるサービスを実現します。
                 </p>
                 <Link href="/contact">
                   <AnimatedButton
@@ -210,7 +210,7 @@ export default function Home() {
                     hoverEffect="shine"
                     iconRotate={true}
                   >
-                    パートナーになる
+                    サウナを検索
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </AnimatedButton>
                 </Link>
@@ -232,13 +232,13 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                     className="bg-amber-100 dark:bg-amber-900 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                   >
-                    <HardHat className="h-7 w-7 md:h-8 md:w-8 text-amber-600 dark:text-amber-400" />
+                    <Flame className="h-7 w-7 md:h-8 md:w-8 text-amber-600 dark:text-amber-400" />
                   </motion.div>
                   <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-900 dark:text-white">
-                    品質保証
+                    正確な情報
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                    私たちのプロジェクトは最高水準の品質と耐久性を満たし、満足度保証を提供しています。
+                    最新で正確なサウナ情報を提供し、ユーザーが最適なサウナを見つけられるようサポートします。
                   </p>
                 </div>
               </HoverCard>
@@ -249,13 +249,13 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                     className="bg-amber-100 dark:bg-amber-900 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                   >
-                    <Hammer className="h-7 w-7 md:h-8 md:w-8 text-amber-600 dark:text-amber-400" />
+                    <Search className="h-7 w-7 md:h-8 md:w-8 text-amber-600 dark:text-amber-400" />
                   </motion.div>
                   <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-900 dark:text-white">
-                    熟練の職人
+                    簡単検索
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                    私たちのチームは、建設業界で数十年の経験を積んだ熟練の専門家で構成されています。
+                    エリア、設備、レビューなど、様々な条件でサウナを簡単に検索できます。
                   </p>
                 </div>
               </HoverCard>
@@ -266,13 +266,13 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                     className="bg-amber-100 dark:bg-amber-900 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                   >
-                    <Compass className="h-7 w-7 md:h-8 md:w-8 text-amber-600 dark:text-amber-400" />
+                    <Thermometer className="h-7 w-7 md:h-8 md:w-8 text-amber-600 dark:text-amber-400" />
                   </motion.div>
                   <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-900 dark:text-white">
-                    革新的なソリューション
+                    詳細情報
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                    最先端の技術と手法を実装し、効率的で持続可能な結果を提供します。
+                    温度、設備、営業時間など、サウナの詳細情報を分かりやすく提供します。
                   </p>
                 </div>
               </HoverCard>
@@ -290,7 +290,7 @@ export default function Home() {
                 <div className="text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">
                   <CountUp end={500} suffix="+" />
                 </div>
-                <p className="text-black dark:text-gray-100 font-medium text-sm md:text-base">完成プロジェクト数</p>
+                <p className="text-black dark:text-gray-100 font-medium text-sm md:text-base">登録サウナ数</p>
               </div>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
@@ -306,7 +306,7 @@ export default function Home() {
                 <div className="text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2">
                   <CountUp end={150} suffix="+" />
                 </div>
-                <p className="text-black dark:text-gray-100 font-medium text-sm md:text-base">専門チームメンバー</p>
+                <p className="text-black dark:text-gray-100 font-medium text-sm md:text-base">登録ユーザー数</p>
               </div>
             </FadeIn>
             <FadeIn direction="up" delay={0.4}>
@@ -326,10 +326,10 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <FadeIn>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-              建設プロジェクトを始める準備はできていますか？
+              理想のサウナを見つける準備はできていますか？
             </h2>
             <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-xl sm:max-w-2xl mx-auto mb-6 md:mb-10">
-              無料相談と見積もりのため、今すぐお問い合わせください。私たちのチームは、精密さと卓越性をもってあなたのビジョンを実現する準備ができています。
+              今すぐサウナを検索して、あなたに最適なサウナを見つけましょう。私たちのサービスは、簡単で正確な検索で理想のサウナ体験をサポートします。
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link href="/contact" className="w-full sm:w-auto">
@@ -338,7 +338,7 @@ export default function Home() {
                   className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 md:px-8 w-full sm:w-auto"
                   hoverEffect="ripple"
                 >
-                  無料見積もりを取得
+                  サウナを検索
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </HoverButton>
               </Link>
@@ -350,7 +350,7 @@ export default function Home() {
                   hoverEffect="pulse"
                   iconAnimation={true}
                 >
-                  チームに連絡
+                  お問い合わせ
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </AnimatedButton>
               </Link>

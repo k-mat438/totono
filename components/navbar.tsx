@@ -2,17 +2,17 @@
 
 import type React from "react"
 
-import { useState, useEffect, useRef, useCallback } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronDown, Flame, Menu, Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { HardHat, ChevronDown, Menu, Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { motion, AnimatePresence } from "framer-motion"
+import { useCallback, useEffect, useRef, useState } from "react"
 
-import { Button } from "@/components/ui/button"
-import { AnimatedButton } from "@/components/ui/animated-button"
-import { useReducedMotion } from "@/hooks/use-reduced-motion"
 import { MobileMenu } from "@/components/mobile-menu"
+import { AnimatedButton } from "@/components/ui/animated-button"
+import { Button } from "@/components/ui/button"
+import { useReducedMotion } from "@/hooks/use-reduced-motion"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -115,7 +115,7 @@ export function Navbar() {
         } safe-top`}
         initial="visible"
         animate={shouldShowNavbar ? "visible" : "hidden"}
-        variants={navVariants}
+        variants={navVariants as any}
       >
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8 max-w-[1920px]">
           <div className="flex h-14 sm:h-16 md:h-18 lg:h-20 items-center justify-between">
@@ -127,7 +127,7 @@ export function Navbar() {
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="bg-amber-500 text-white p-1.5 sm:p-2 rounded-lg"
                 >
-                  <HardHat className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
+                  <Flame className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
                 </motion.div>
                 <div className="flex flex-col">
                   <motion.span
@@ -136,11 +136,11 @@ export function Navbar() {
                     whileHover={{ scale: 1.03, color: "#F59E0B" }}
                     transition={{ duration: 0.2 }}
                   >
-                    <span className="inline xs:hidden">BM</span>
-                    <span className="hidden xs:inline">BuildMaster</span>
+                    <span className="inline xs:hidden">TT</span>
+                    <span className="hidden xs:inline">Totono</span>
                   </motion.span>
                   <span className="text-[10px] sm:text-xs text-muted-foreground hidden xs:inline">
-                    建設の卓越性
+                    サウナ検索の卓越性
                   </span>
                 </div>
               </Link>
@@ -161,10 +161,10 @@ export function Navbar() {
                 <DropdownNavItem
                   label="サービス"
                   items={[
-                    { href: "/services/residential", label: "住宅建設" },
-                    { href: "/services/commercial", label: "商業開発" },
-                    { href: "/services/industrial", label: "工業施設" },
-                    { href: "/services/design", label: "建築設計" },
+                    { href: "/services/residential", label: "岩盤浴" },
+                    { href: "/services/commercial", label: "スチームサウナ" },
+                    { href: "/services/industrial", label: "フィンランド式サウナ" },
+                    { href: "/services/design", label: "その他サウナ" },
                   ]}
                   pathname={pathname}
                   onHover={() => setHoveredItem("services")}
@@ -174,7 +174,7 @@ export function Navbar() {
 
                 <NavItem
                   href="/projects"
-                  label="プロジェクト"
+                  label="サウナ施設"
                   isActive={pathname === "/projects"}
                   onHover={() => setHoveredItem("projects")}
                   onLeave={() => setHoveredItem(null)}
@@ -209,7 +209,7 @@ export function Navbar() {
                   hoverEffect="lift"
                   iconAnimation={true}
                 >
-                  見積もりを取得
+                  サウナを検索
                   <ChevronDown className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
                 </AnimatedButton>
               </Link>

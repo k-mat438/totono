@@ -1,5 +1,5 @@
+import { Facebook, Flame, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
 import Link from "next/link"
-import { HardHat, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -11,11 +11,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="text-center sm:text-left">
             <Link href="/" className="flex items-center gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
-              <HardHat className="h-7 w-7 text-amber-500" />
-              <span className="text-xl font-bold text-white">BuildMaster</span>
+              <Flame className="h-7 w-7 text-amber-500" />
+              <span className="text-xl font-bold text-white">Totono</span>
             </Link>
             <p className="text-gray-400 mb-6 text-sm sm:text-base">
-              革新的な建設ソリューションの信頼できるパートナー。2000年より卓越性を築き、品質を提供しています。
+              革新的なサウナ検索サービスの信頼できるパートナー。ユーザーに最適なサウナを見つけるお手伝いをしています。
             </p>
             <div className="flex space-x-4 justify-center sm:justify-start">
               <Link href="#" className="text-gray-400 hover:text-amber-500 transition-colors">
@@ -46,7 +46,7 @@ export function Footer() {
                   href="/services/residential"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  住宅建設
+                  岩盤浴
                 </Link>
               </li>
               <li>
@@ -54,7 +54,7 @@ export function Footer() {
                   href="/services/commercial"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  商業開発
+                  スチームサウナ
                 </Link>
               </li>
               <li>
@@ -62,7 +62,7 @@ export function Footer() {
                   href="/services/industrial"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  工業施設
+                  フィンランド式サウナ
                 </Link>
               </li>
               <li>
@@ -70,7 +70,7 @@ export function Footer() {
                   href="/services/design"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  建築設計
+                  その他サウナ
                 </Link>
               </li>
               <li>
@@ -78,7 +78,7 @@ export function Footer() {
                   href="/services/management"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  プロジェクト管理
+                  エリア検索
                 </Link>
               </li>
               <li>
@@ -86,7 +86,7 @@ export function Footer() {
                   href="/services/sustainable"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  持続可能な建設
+                  設備検索
                 </Link>
               </li>
             </ul>
@@ -109,7 +109,7 @@ export function Footer() {
                   href="/projects"
                   className="text-gray-400 text-sm sm:text-base hover:text-amber-500 transition-colors inline-block"
                 >
-                  プロジェクト
+                  サウナ施設
                 </Link>
               </li>
               <li>
@@ -154,7 +154,7 @@ export function Footer() {
               <li className="flex items-start justify-center sm:justify-start">
                 <MapPin className="h-5 w-5 text-amber-500 mr-3 mt-1 flex-shrink-0" />
                 <span className="text-gray-400 text-sm sm:text-base text-left">
-                  123 BuildMaster Ave, Construction City, BC 12345
+                  東京都渋谷区サウナ通り1-2-3
                 </span>
               </li>
               <li className="flex items-start justify-center sm:justify-start">
@@ -163,13 +163,13 @@ export function Footer() {
               </li>
               <li className="flex items-start justify-center sm:justify-start">
                 <Mail className="h-5 w-5 text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-400 text-sm sm:text-base">info@buildmaster.com</span>
+                <span className="text-gray-400 text-sm sm:text-base">info@totono.com</span>
               </li>
             </ul>
             <div className="mt-6">
               <Link href="/contact#quote-form">
                 <Button className="bg-amber-500 hover:bg-amber-600 text-black font-medium w-full transition-all duration-300">
-                  無料見積もりを取得
+                  サウナを検索
                 </Button>
               </Link>
             </div>
@@ -178,7 +178,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 sm:mt-10 pt-6 text-center text-gray-400 text-sm max-w-6xl mx-auto">
-          <p>&copy; {new Date().getFullYear()} BuildMaster Construction. 全著作権所有。</p>
+          <p>&copy; {new Date().getFullYear()} Totono. 全著作権所有。</p>
         </div>
       </div>
     </footer>
