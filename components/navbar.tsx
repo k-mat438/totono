@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation"
 import { useCallback, useEffect, useRef, useState } from "react"
 
 import { MobileMenu } from "@/components/mobile-menu"
-import { AnimatedButton } from "@/components/ui/animated-button"
 import { Button } from "@/components/ui/button"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
 
@@ -203,16 +202,12 @@ export function Navbar() {
 
             {/* Desktop Right Side */}
             <div className="hidden md:flex items-center gap-2 lg:gap-4">
-              <Link href="/contact#quote-form">
-                <AnimatedButton
-                  className="bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm sm:text-base h-9 sm:h-10 transition-all duration-300 shadow-md hover:shadow-lg"
-                  hoverEffect="lift"
-                  iconAnimation={true}
-                >
-                  サウナを検索
-                  <ChevronDown className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
-                </AnimatedButton>
-              </Link>
+              <button className="text-foreground hover:text-amber-500 transition-colors duration-200 text-sm sm:text-base font-medium">
+                ログイン
+              </button>
+              <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-colors duration-200 text-sm sm:text-base shadow-lg">
+                無料で始める
+              </button>
 
               {/* Theme toggle button */}
               {mounted && (
